@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Translator Extension",
+    "version": "1.0",
+    "description": "Translate and save words with ease",
+    "icons": {
+        "48": "icon48.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "contextMenus",
+        "https://libretranslate.com/",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "48": "icon48.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content-script.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
